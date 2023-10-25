@@ -1,6 +1,6 @@
 package org.validation.validators;
 
-public class UserValidator implements Validator{
+public class UserValidator implements Validator {
   private Validator next;
 
   @Override
@@ -16,7 +16,7 @@ public class UserValidator implements Validator{
     if (!user.isValid()) {
       return false;
     }
-   return true;
+    return true;
   }
 
 }

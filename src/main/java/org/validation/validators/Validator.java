@@ -1,8 +1,10 @@
 package org.validation.validators;
 
-public interface  Validator {
+public interface Validator {
 
   Validator getNext();
-         void setNext(Validator validator);
-         boolean validate(Account account, User user);
+
+  void setNext(Validator validator);
+
+  boolean validate(Account account, User user);
 }

@@ -4,8 +4,7 @@ public class ValidatorChain {
 
   private Validator firstValidator;
 
-  public void addValidator(Validator validator)
-  {
+  public void addValidator(Validator validator) {
     if (firstValidator == null) { // If there is no validator in the chain, then add the first one
       firstValidator = validator;
     } else {
@@ -17,19 +16,17 @@ public class ValidatorChain {
     }
   }
 
-  public String validate(Account account, User user)
-  {
+  public String validate(Account account, User user) {
     while (firstValidator != null) {
-       boolean isValid = firstValidator.validate(account, user);
+      boolean isValid = firstValidator.validate(account, user);
 
-       if(!isValid)
-         return "Validation failed at "+firstValidator.getClass().getSimpleName();
-       firstValidator = firstValidator.getNext();
+      if (!isValid)
+        return "Validation failed at " + firstValidator.getClass().getSimpleName();
+      firstValidator = firstValidator.getNext();
 
     }
     return "All validations passed";
   }
-
 
 
 }

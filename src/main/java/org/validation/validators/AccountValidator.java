@@ -1,6 +1,6 @@
 package org.validation.validators;
 
-public class AccountValidator implements Validator{
+public class AccountValidator implements Validator {
   public Validator getNext() {
     return next;
   }
